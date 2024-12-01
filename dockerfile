@@ -1,7 +1,12 @@
-FROM golang:1.20.5
+# FROM golang:1.20.5
 
-WORKDIR /go/src/github.com/gihyodocker/echo
-COPY main.go .
-RUN go mod init
+# WORKDIR /go/src/github.com/gihyodocker/echo
+# COPY main.go .
+# RUN go mod init
 
-CMD ["go", "run", "main.go"]
+# CMD ["go", "run", "main.go"]
+
+FROM ghcr.io/gihyodocker/basetest:latest
+
+RUN cat /var/gihyodocker/version
+RUN cat /var/gihyodocker/version

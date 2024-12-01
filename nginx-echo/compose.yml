@@ -1,0 +1,11 @@
+services:
+  echo:
+    image: ghcr.io/gihyodocker/echo:v0.1.0
+
+  nginx:
+    build: ./nginx
+    depends_on:
+      - echo
+    # ホストの9000ポートをnginxの80ポートにフォワード
+    ports:
+      - "9000:80"
